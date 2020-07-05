@@ -14,7 +14,7 @@ class SettingsForm extends StatefulWidget {
 class _SettingsFormState extends State<SettingsForm> {
 
   final _formKey =GlobalKey<FormState>();
-  final List<String> sugars =['0','1','2','3','4','5'];
+  final List<String> sugars =['0','1','2','3','4'];
 
   String _currentName;
   String _currentSugars;
@@ -79,9 +79,9 @@ class _SettingsFormState extends State<SettingsForm> {
                     if(_formKey.currentState.validate())
                     {
                       await DatabaseService(uid: user.uid).updateUserData(
-                          _currentSugars ?? userData.sugars,
-                          _currentName ?? userData.name,
-                          _currentStrength ?? userData.strength
+                          _currentSugars ?? snapshot.data.sugars,
+                          _currentName ?? snapshot.data.name,
+                          _currentStrength ?? snapshot.data.strength
                       );
                       Navigator.pop(context);
                     }
