@@ -33,6 +33,8 @@ class _RegisterState extends State<Register> {
           key: _formkey,
           child: Column(
             children: <Widget>[
+              SizedBox(height: 10.0,),
+              CircleAvatar(backgroundImage: AssetImage('assets/logo.PNG'),radius: 65.0,),
               SizedBox(height: 20.0,),
               TextFormField(
                 decoration: textInputDecoration.copyWith(hintText: 'Email'),
